@@ -1,3 +1,3 @@
 # DSP roadmap
 
-Repo containing important stuff forlearning Digital Signal Processing using the C PortAudio library
+Depotet som inneholder programmer og filer for lære seg digitalsignalbehandling og lydprogrammering med PortAudio biblioteket i C

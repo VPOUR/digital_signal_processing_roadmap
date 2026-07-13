@@ -1,8 +1,5 @@
-# include <stdio.h>
-# include <portaudio.h>
-# include <math.h>
+# include "dsp.h"
 
-# define SAMPLE_RATE 44100
 # define FREQUENCY 440.0
 
 /**
@@ -25,14 +22,9 @@
  * indicating it wants to be called again (one of 3 return types)
  */
 
-typedef struct
-{
-	float phase;
-} PaData;
-
 static int sineCallback(const void *inputBuffer, void *outputBuffer,
 				unsigned long framesPerBuffer,
-				const PaStreamCallbackTimeInfo * timeinfo,
+				const PaStreamCallbackTimeInfo *timeinfo,
 				PaStreamCallbackFlags statusFlags,
 				void *userData)
 {
@@ -56,14 +48,6 @@ static int sineCallback(const void *inputBuffer, void *outputBuffer,
 /**
  * main - function that initializes PortAudio, opens a stream, calls a
  * function with audio data recursively and closes the stream
- *  - Pa_OpenDefaultStream - the function that starts a stream by
- *  connecting PortAudio to the default audio device, and you can
- *  specify your preferred channels, sample format & the callback func.
- *  to be called repeatedly
- *  - Pa_StartStream - function that starts the actual stream
- *  - Pa_Sleep - time the callback function will be instantiated
- *  - Pa_StopStream - stop the stream
- *  - Pa_CloseStream - free up resources used by stream
  * This is the main function of a program that plays a 440Hz sinewave
  * for 3 seconds
  * Return: 0 if executed succesfully

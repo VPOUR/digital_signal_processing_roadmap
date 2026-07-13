@@ -1,7 +1,6 @@
-# include <stdio.h>
-# include <portaudio.h>
+# include "dsp.h"
 
-# define SAMPLE_RATE 44100
+
 # define FRAMES_PER_BUFFER 256
 
 /**
@@ -54,6 +53,8 @@ static int silentCallback(const void *inputBuffer, void *outputBuffer,
  *  - Pa_Sleep - time the callback function will be instantiated
  *  - Pa_StopStream - stop the stream
  *  - Pa_CloseStream - free up resources used by stream
+ * This function initializes PortAudio, opens a stream and plays an
+ * empty audio
  * Return: 0 if executed succesfully
  */
 

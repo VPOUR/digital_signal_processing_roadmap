@@ -1,17 +1,16 @@
-# include <stdio.h>
-# include <portaudio.h>
+# include "dsp.h"
 
 /**
  * main - program that checks if PortAudio has been initialized
  * successfully using;
- *  - Pa_Initialize -  to prepare PortAudio to
+ * - Pa_Initialize -  to prepare PortAudio to
  * comunicate with the audio system of the OS by;
- * 	- initializing Host APIs and setting up available audio backends
- *   	(JACK, PulseAudio, ALSA etc)
- * 	- discovers audio devices (all connected sound hardware)
- * 	- allocate internal memory for real time audio streams
- * 	- resetting device indices (setting the baseline index
- *   	used to target specific input and output devices)
+ *   - initializing Host APIs and setting up available audio backends
+ *   (JACK, PulseAudio, ALSA etc)
+ *   - discovers audio devices (all connected sound hardware)
+ *   - allocate internal memory for real time audio streams
+ *   - resetting device indices (setting the baseline index
+ *   used to target specific input and output devices)
  * Return: 0 if successfully executed
  */
 

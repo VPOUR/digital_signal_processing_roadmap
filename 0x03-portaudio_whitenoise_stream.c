@@ -1,9 +1,5 @@
-# include <stdio.h>
-# include <stdlib.h>
-# include <portaudio.h>
-# include <time.h>
+# include "dsp.h"
 
-# define SAMPLE_RATE 44100
 # define FRAMES_PER_BUFFER 256
 
 /**
@@ -49,14 +45,8 @@ static int noiseCallback(const void *inputBuffer, void *outputBuffer,
 /**
  * main - function that initializes PortAudio, opens a stream, calls a
  * function with audio data recursively and closes the stream
- *  - Pa_OpenDefaultStream - the function that starts a stream by
- *  connecting PortAudio to the default audio device, and you can
- *  specify your preferred channels, sample format & the callback func.
- *  to be called repeatedly
- *  - Pa_StartStream - function that starts the actual stream
- *  - Pa_Sleep - time the callback function will be instantiated
- *  - Pa_StopStream - stop the stream
- *  - Pa_CloseStream - free up resources used by stream
+ * This is a function that produces white noise by generating amplitudes
+ * using random numbers
  * Return: 0 if executed succesfully
  */
 

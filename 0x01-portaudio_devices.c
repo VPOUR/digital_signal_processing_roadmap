@@ -1,5 +1,4 @@
-# include <stdio.h>
-# include <portaudio.h>
+# include "dsp.h"
 
 /**
  * main - program that lists all devices that are found by PortAudio
